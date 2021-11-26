@@ -39,9 +39,11 @@ contract("SimpleBank", function (accounts) {
   });
 
   it("should mark addresses as enrolled", async () => {
-    await instance.enroll({ from: alice });
+   await instance.enroll({ from: alice });
+
 
     const aliceEnrolled = await instance.enrolled(alice, { from: alice });
+    console.log(aliceEnrolled)
     assert.equal(
       aliceEnrolled,
       true,
